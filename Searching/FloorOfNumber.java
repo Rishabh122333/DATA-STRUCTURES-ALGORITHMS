@@ -2,8 +2,10 @@ public class FloorOfNumber {
     public static int findfloor(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
-        if(target>arr[end])
+        if(target<arr[0])
             return -1;
+        if(target>arr[end])
+            return arr[end];
 
         while(start <= end) {
 
