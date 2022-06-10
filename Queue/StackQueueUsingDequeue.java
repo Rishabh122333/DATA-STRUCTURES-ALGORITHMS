@@ -1,7 +1,11 @@
 public class StackQueueUsingDequeue {
     static class Dequeue {
         static Node head;
-
+        Dequeue()
+        {
+            head=null;
+        }
+        
         static class Node {
             int data;
             Node next;
