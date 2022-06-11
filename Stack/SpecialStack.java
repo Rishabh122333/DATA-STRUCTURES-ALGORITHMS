@@ -14,7 +14,6 @@ public class SpecialStack {
         stack.push(x);
         if(stack.peek()<min.peek())
         {
-            min.pop();
             min.push(x);
         }
     }
