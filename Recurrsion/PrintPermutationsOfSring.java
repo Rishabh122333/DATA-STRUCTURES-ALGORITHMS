@@ -1,15 +1,19 @@
 public class PrintPermutationsOfSring {
-    public static void print(String str, String ans) {
-        if (str.isEmpty()) {
-            System.out.print(ans + " ");
-            return;
+    public static void print(String str,String ans)
+    {
+        if(str.isEmpty())
+        {
+            System.out.println(ans);
+            return ;
         }
-        char ch = str.charAt(0);
-        for (int i = 0; i <=ans.length(); i++) {
-            String f=ans.substring(0,i);
-            String s=ans.substring(i);
-            print(str.substring(1),f+ch+s);
+        for (int i = 0; i <str.length(); i++) {
+            char ch=str.charAt(i);
+            String f=str.substring(0,i);
+            String s=str.substring(i+1);
+            print(f+s, ans+ch);
+
         }
+        
     }
 
     public static void main(String[] args) {
