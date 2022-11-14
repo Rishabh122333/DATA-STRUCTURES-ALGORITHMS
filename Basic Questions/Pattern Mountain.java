@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+
+    Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	pattern(n);
+}
+public static void pattern(int n)
+{
+	int s=n+2;
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=i;j++)
+		{
+			System.out.print(j+" ");
+		}
+		for(int j=1;j<s;j++)
+		{
+			System.out.print("  ");
+		}
+		for(int j=i;j>=1;j--)
+		{
+			if(j==n)
+				System.out.print("");
+			else
+				System.out.print(j+" ");
+		}
+		s-=2;
+		System.out.println();
+	}
+}
+}
