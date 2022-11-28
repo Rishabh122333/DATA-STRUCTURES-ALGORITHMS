@@ -3,19 +3,23 @@ import java.util.Stack;
 public class NextGreaterElement {
     public static void nextgreater(int arr[])
     {
-        Stack<Integer>stack=new Stack<>();
-        for (int i = arr.length-1; i >=0 ; i--) {
-            if(!stack.isEmpty())
+        int ans[]=new int[arr.length];
+        Stack<Integer>st=new Stack<>();
+        for (int i = 0; i < ans.length; i++) {
+            while(!(st.isEmpty()) && arr[i]>arr[st.peek()])
             {
-                while (!stack.isEmpty() && stack.peek()<arr[i])
-                    stack.pop();
+                int idx=st.pop();
+                ans[idx]=arr[i];
             }
-            if(stack.isEmpty())
-                System.out.println(arr[i]+" -- -1");
-            else
-                System.out.println(arr[i]+" -- "+stack.peek());
-            stack.push(arr[i]);
+            st.push(i);
+        } 
+        while(!st.isEmpty())
+        {
+            ans[st.peek()]=-1;
+            st.pop();
         }
+        for (int i = 0; i < ans.length; i++) {
+            System.out.print(ans[i]+" ");
     }
     public static void main(String[] args)
     {
